@@ -138,32 +138,8 @@ const EditModal = ({ isOpen, onClose, rowData }) => {
                               </RadioGroup>
                           </FormControl>
 
-                          {editedData.jenisIuran && (
-                            <FormControl>
-                                <FormLabel>Pembayaran</FormLabel>
-                                <Select
-                                    placeholder="Pilih jenis pembayaran"
-                                    name="jenisPembayaran"
-                                    value={editedData.jenisPembayaran}
-                                    onChange={(e) => {
-                                        const newValue = e.target.value;
-                                        setEditedData({ ...editedData, jenisPembayaran: newValue });
-
-                                        const newJumlahPembayaran = calculateNewJumlahPembayaran(editedData.jenisIuran, newValue);
-                                        setEditedData(prevState => ({
-                                            ...prevState,
-                                            jumlahPembayaran: newJumlahPembayaran,
-                                        }));
-                                    }}
-                                >
-                                    <option value="Bulanan">Bulanan</option>
-                                    <option value="Tahunan">Tahunan</option>
-                                </Select>
-
-                            </FormControl>
-                        )}
-
-                        {editedData.jenisIuran && editedData.jenisPembayaran && (
+                        
+                        {editedData.jenisIuran && (
                             <FormControl>
                                 <FormLabel>Jumlah Pembayaran</FormLabel>
                                 <Input
