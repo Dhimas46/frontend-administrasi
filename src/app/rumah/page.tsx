@@ -100,10 +100,10 @@ const Page = () => {
             name: 'Pembayaran',
             cell: (row) => (
                 <Flex justify="space-between">
-                    <a href="#" onClick={() => handleOpenPaymentModal(row)}>asd</a>
+                    <a href="#" onClick={() => handleOpenPaymentModal(row)} style={{ textDecoration: 'underline' }}>detail</a>
                 </Flex>
             ),
-        }, 
+        },        
         {
             name: 'Alamat Rumah',
             selector: row => row.alamat_rumah,
